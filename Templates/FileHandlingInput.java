@@ -1,4 +1,4 @@
-package com.company;
+package sample;
 
 import java.io.*;
 
@@ -15,7 +15,6 @@ public class FileHandlingInput {
 
             fis = new FileInputStream(new File(path));
             bis = new BufferedInputStream(fis);
-
             fr = new FileReader(new File(path));
             br = new BufferedReader(fr);
 
@@ -77,7 +76,8 @@ public class FileHandlingInput {
     {
         int Size = -1;
         try {
-            fis.available();
+            Size = fis.available();
+            System.out.println(Size);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -86,7 +86,7 @@ public class FileHandlingInput {
 
 
 
-    void CloseAll()
+    void closeAll()
     {
         try {
             fis.close();
